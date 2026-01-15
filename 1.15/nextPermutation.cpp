@@ -25,7 +25,7 @@ public:
             {
                 int tar = find_min(nums[i-1],nums,i);
                 swap(nums[tar],nums[i-1]);
-                sort(nums.begin()+i,nums.end());
+                reverse(nums.begin()+i,nums.end());
                 return;
             }
         }
