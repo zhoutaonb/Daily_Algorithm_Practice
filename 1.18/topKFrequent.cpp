@@ -9,13 +9,7 @@ class Solution {
             map<int,int> m{};
             for(auto i :nums)
             {
-                if(m.find(i)!=m.end())
-                {
-                    m.find(i)->second++;
-                }
-                else{
-                    m.insert(pair(i,1));
-                }
+                m[i]++;
             }
             priority_queue<pair<int,int>,vector<pair<int,int>>,MyCompare> p_q{};
             for(auto i : m)
