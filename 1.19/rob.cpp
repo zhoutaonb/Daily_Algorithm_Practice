@@ -6,16 +6,16 @@ class Solution {
             return nums[0];
             if(n==2)
             return max(nums[0],nums[1]);
-    
-            vector<int> maxrob(n);
-            maxrob[0] = nums[0];
-            maxrob[1] = max(nums[0],nums[1]);
+            int pre=nums[0];
+            int now = max(nums[0],nums[1]);
+            int temp;
             for(int i{2};i<n;i++)
             {
-                maxrob[i] = max(maxrob[i-1],maxrob[i-2]+nums[i]);
-    
+                temp = now;
+               now = max(pre+nums[i],now);
+               pre = temp;
             }
-            return maxrob[n-1];
+            return now;
         }
     };
     
