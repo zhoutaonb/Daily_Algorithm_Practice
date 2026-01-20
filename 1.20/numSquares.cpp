@@ -6,11 +6,11 @@ class Solution {
             if((k*k)==n)
             {ans[n]=1;return;}
             int min_sum{n};
-            for(auto i{1};i<=(n/2);i++)
+            for(auto i{1};(i*i)<=n;i++)
             {
-                if((ans[n-i]+ans[i])<min_sum)
+                if((ans[n-i*i]+ans[i*i])<min_sum)
                 {
-                    min_sum = ans[n-i]+ans[i];
+                    min_sum = ans[n-i*i]+ans[i*i];
                 }
             }
             ans[n]=min_sum;
